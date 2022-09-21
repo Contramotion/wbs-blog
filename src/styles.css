@@ -153,9 +153,10 @@ h1::before {
 header ul {
   display: flex;
   margin: auto;
+  margin-left: clamp(120px, 15vw, 250px);
 }
 header li {
-  margin-inline: 50px;
+  margin-inline: clamp(10px, 1.5vw, 50px);
 }
 header li:first-of-type {
   margin-left: 0;
@@ -194,7 +195,7 @@ header a > img {
 .weekly {
   height: 800px;
   overflow: hidden;
-  background-image: url("src/img/weekly.jpg");
+  background-image: url("img/weekly.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -603,7 +604,7 @@ header a > img {
   transform: scale(1.2);
   box-shadow: 0 0 10px 3px var(--cl-accent);
 }
-s .socials img {
+.socials img {
   object-fit: cover;
   width: 100%;
 }
