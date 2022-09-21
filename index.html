@@ -1,13 +1,179 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="de">
 <head>
-	<title>Parcel Sandbox</title>
+	<title>World Wide Blog</title>
 	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="src/styles.css">
 </head>
 
 <body>
-	<div id="app"></div>
+	<header>
+		<nav>
+			<div class="logocontainer">
+				<img src="src/img/logo.svg" alt="logo">
+				<h1>World Wirde Blog</h1>
+			</div>
+			<ul>
+				<li><a href="#">Social Media</a></li>
+				<li><a href="#">Coding</a></li>
+				<li><a href="#">Security</a></li>
+				<li><a href="#">Fotografie</a></li>
+				<li><a href="#">Musik</a></li>
+			</ul>
+			<a href="#" class="search">
+				<img src="src/img/magnifier.svg" alt="Suche">
+			</a>
+		</nav>
+	</header>
+	<main>
+		<article class="weekly">
+			<img src="src/img/weekly.img" alt="keyboard"></img>
+			<section>
+				<p class="subheadline"></p>
+				<h2>Wie werde ich erfolgreicher Webentwickler?</h2>
+			</section>
+			<section>
+				<article>
+					<h3>Headline Lorem</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed atque doloremque quia ad soluta et velit quibusdam molestias voluptatum.</p>
+				</article>
+				<article>
+					<h3>Headline Ipsum</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed atque doloremque quia ad soluta et velit quibusdam molestias voluptatum.</p>
+				</article>
+				<article>
+					<h3>Headline Dolor</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed atque doloremque quia ad soluta et velit quibusdam molestias voluptatum.</p>
+				</article>
+			</section>
+		</article>
+		<section class="trending">
+			<h2>Trending Now</h2>
+			<article>
+				<img src="src/img/trend-social.jpg" alt="Katze mit Brille">
+				<p class="subheadline">Social Media</p>
+				<h3>"Cool Cat" trendet - doch was steckt dahinter?</h3>
+				<p>09.09.2022/p>
+				<img src="src/img/share.svg" alt="Share-Button">
+			</article>
+			<article>
+				<img src="src/img/trend-photography.jpg" alt="Kamera vor Stadtmotiv">
+				<p class="subheadline">Fotografie</p>
+				<h3>Die besten Fotografie-Spots für Stadtfotografen</h3>
+				<p>12.09.2022</p>
+				<img src="src/img/share.svg" alt="Share-Button">
+			</article>
+			<article>
+				<img src="src/img/trend-security.jpg" alt="Laptop mit rotem Sperrbildschirm">
+				<p class="subheadline">Security</p>
+				<h3>Ransomware - unterschätzte Gefahr?</h3>
+				<p>21.09.2022</p>
+				<img src="src/img/share.svg" alt="Share-Button">
+			</article>
+			<article>
+				<img src="src/img/trend-coding.jpg" alt="Code auf dunklem Hintergrund">
+				<p class="subheadline">Coding</p>
+				<h3>Javascript Bootcamp jetzt im Sale</h3>
+				<p>22.09.2022</p>
+				<img src="src/img/share.svg" alt="Share-Button">
+			</article>
+		</section>
+		<section class="theme">
+			<h2>Top of all Time</h2>
+			<img src="src/img/more.svg" alt="Listenicon">
+			<h2>Mehr Beiträge</h2>
+			<article>
+				<img src="src/img/art-social2.jpg" alt="Handy vor Stadt">
+				<div>
+					<p class="subheadline"></p>
+					<h3>Lorem Ipsum Dolor sit Amet!</h3>
+					<p>03.04.2021</p>
+				</div>
+			</article>
+			<article>
+				<img src="src/img/art-social.jpg" alt="Handy auf Laptop">
+				<div>
+					<p class="subheadline"></p>
+					<h3>Lorem Ipsum Dolor sit Amet!</h3>
+					<p>03.04.2021</p>
+				</div>
+			</article>
+			<article>
+				<img src="src/img/art-coding.jpg" alt="Frau am Rechner">
+				<div>
+					<p class="subheadline"></p>
+					<h3>Lorem Ipsum Dolor sit Amet!</h3>
+					<p>03.04.2021</p>
+				</div>
+			</article>
+			<article>
+				<img src="src/img/art-photography.jpg" alt="Bunt beleuchtete Kamera">
+				<div>
+					<p class="subheadline"></p>
+					<h3>Lorem Ipsum Dolor sit Amet!</h3>
+					<p>03.04.2021</p>
+				</div>
+			</article>
+			<article>
+				<img src="src/img/art-security.jpg" alt="Bunt leuchtender Laptop">
+				<div>
+					<p class="subheadline"></p>
+					<h3>Lorem Ipsum Dolor sit Amet!</h3>
+					<p>03.04.2021</p>
+				</div>
+			</article>
+			<article>
+				<img src="src/img/art-music.jpg" alt="Menge vor Konzert">
+				<div>
+					<p class="subheadline"></p>
+					<h3>Lorem Ipsum Dolor sit Amet!</h3>
+					<p>03.04.2021</p>
+				</div>
+			</article>
+			<button><a href="#">Mehr finden</a></button>
+		</section>
+		<section class="categories">
+			<h2></h2>
+			<article>
+				<img src="src/img/cat-social.jpg" alt="Handy">
+				<p class="subheadline"></p>
+			</article>
+			<article>
+				<img src="src/img/cat-coding.jpg" alt="Mann vor Laptop">
+				<p class="subheadline"></p>
+			</article>
+			<article>
+				<img src="src/img/cat-security.jpg" alt="Tastatur auf der ein Schloss steht">
+				<p class="subheadline"></p>
+			</article>
+			<article>
+				<img src="src/img/cat-photography.jpg" alt="Frau mit Kamera">
+				<p class="subheadline"></p>
+			</article>
+			<article>
+				<img src="src/img/cat-music.jpg" alt="Musikstudio">
+				<p class="subheadline"></p>
+			</article>
+		</section>
+		<section class="socials">
+			<h2>Folge uns</h2>
+			<a href="#"><img src="src/img/facebook.svg" alt="Facebook Logo"></a>
+			<a href="#"><img src="src/img/instagram.svg" alt="Instagram Logo"></a>
+			<a href="#"><img src="src/img/linkedin.svg" alt="LinkedIn Logo"></a>
+			<a href="#"><img src="src/img/twitter.svg" alt="Twitter Logo"></a>
+		</section>
+	</main>
+	<footer>
+		<img src="src/img/logo.svg" alt="logo">
+		<p class="copy">Copyright 2022 - World Wide Blog</p>
+		<nav>
+			<ul>
+				<li>Impressum</li>
+				<li>Datenschutz</li>
+			</ul>
+		</nav>
+	</footer>
 
 	<script src="src/index.js">
 	</script>
