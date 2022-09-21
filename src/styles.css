@@ -1,3 +1,642 @@
-body {
-  font-family: sans-serif;
+/************ Fonts Beginn ************/
+
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/Archivo-Regular.eot");
+  src: url("fonts/Archivo-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Archivo-Regular.woff2") format("woff2"),
+    url("fonts/Archivo-Regular.woff") format("woff"),
+    url("fonts/Archivo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: "Archivo-SemiBold";
+  src: url("fonts/Archivo-SemiBold.eot");
+  src: url("fonts/Archivo-SemiBold.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Archivo-SemiBold.woff2") format("woff2"),
+    url("fonts/Archivo-SemiBold.woff") format("woff"),
+    url("fonts/Archivo-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Archivo-Black";
+  src: url("fonts/Archivo-Black.eot");
+  src: url("fonts/Archivo-Black.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Archivo-Black.woff2") format("woff2"),
+    url("fonts/Archivo-Black.woff") format("woff"),
+    url("fonts/Archivo-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/************ Fonts Ende ************/
+
+/************ Variablen Beginn ************/
+
+:root {
+  --cl-white: #fff;
+  --cl-dark: #1f1f1f;
+  --cl-accent: #eec800;
+
+  --headline-big: Archivo-Black, sans-serif;
+  --headline-small: Archivo-SemiBold, sans-serif;
+  --text: Archivo, sans-serif;
+
+  --max-width: calc(100vw - 400px);
+  --section-margin: 180px;
+}
+
+/************ Fonts Ende ************/
+
+/************ Grundeinstellungen Beginn ************/
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  background-color: var(--cl-white);
+  position: relative;
+  z-index: -2;
+}
+p,
+div,
+section,
+article,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--headline-big);
+}
+h2 {
+  font-size: 2.3rem;
+}
+html body p.subheadline {
+  font-family: var(--headline-small);
+  background-color: var(--cl-accent);
+  color: var(--cl-dark);
+  width: fit-content;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+}
+
+p,
+a {
+  font-family: var(--text);
+}
+
+footer,
+header > nav {
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+/************ Grundeinstellungen Ende ************/
+
+/************ Header Beginn ************/
+
+header {
+  border-bottom: 5px solid var(--cl-dark);
+}
+header > nav,
+.logocontainer {
+  display: flex;
+  align-items: center;
+}
+.logocontainer > img {
+  max-width: 80px;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-left: 20px;
+  position: relative;
+}
+h1::before {
+  content: "";
+  width: 100%;
+  height: 20px;
+  background-color: var(--cl-accent);
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  z-index: -1;
+}
+header ul {
+  display: flex;
+  margin: auto;
+}
+header li {
+  margin-inline: 50px;
+}
+header li:first-of-type {
+  margin-left: 0;
+}
+header li:last-of-type {
+  margin-right: 0;
+}
+header a {
+  color: var(--cl-dark);
+  font-size: 1.1rem;
+  position: relative;
+}
+header li > a::before {
+  content: "";
+  width: 0%;
+  height: 10px;
+  background-color: var(--cl-accent);
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  z-index: -1;
+  transition: width 0.2s ease-in;
+}
+header li > a:hover::before {
+  width: 100%;
+}
+
+header a > img {
+  width: 50px;
+}
+
+/************ Header Ende ************/
+
+/************ Main-Weekly Anfang ************/
+
+.weekly {
+  height: 800px;
+  overflow: hidden;
+  background-image: url("src/img/weekly.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-bottom: var(--section-margin);
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+.weekly h2 {
+  color: var(--cl-dark);
+}
+
+.weekly > img {
+  width: 100%;
+}
+
+.weekly > section:first-of-type {
+  background-color: var(--cl-white);
+  width: 60%;
+  margin-inline: auto;
+  margin-bottom: -60px;
+  padding: 20px 50px;
+  position: relative;
+}
+.weekly > section:last-of-type {
+  background-color: var(--cl-dark);
+  display: flex;
+  padding: 8vw 10vw 3vw;
+  justify-content: space-between;
+}
+
+.weekly > section:last-of-type > article {
+  padding-inline: 60px;
+  position: relative;
+}
+.weekly > section:last-of-type > article:first-of-type {
+  padding-left: 0;
+}
+.weekly > section:last-of-type > article:last-of-type {
+  padding-right: 0;
+}
+.weekly > section:last-of-type > article:last-of-type::after {
+  display: none;
+}
+
+.weekly > section:last-of-type > article::after {
+  content: "";
+  height: 40px;
+  border-right: 1px solid var(--cl-white);
+  position: absolute;
+  right: 0;
+  transform: translate3d(0, -50%, 0);
+  top: 50%;
+}
+
+.weekly > section:last-of-type h3,
+.weekly > section:last-of-type p {
+  color: var(--cl-white);
+}
+
+.weekly > section:last-of-type h3 {
+  margin-bottom: 15px;
+}
+
+/************ Main-Weekly Ende ************/
+
+/************ Main-Trending Anfang ************/
+
+.trending {
+  background-color: var(--cl-dark);
+}
+.trending > div {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-bottom: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trending h2 {
+  text-align: center;
+  padding: 50px 0 50px;
+  position: relative;
+}
+
+.trending h2::before {
+  content: "";
+  height: 60px;
+  border-right: 1px solid var(--cl-white);
+  position: absolute;
+  transform: translate3d(-50%, 0, 0);
+  left: 50%;
+  top: -30px;
+  mix-blend-mode: difference;
+}
+
+.trending h2,
+.trending h3,
+.trending p {
+  color: var(--cl-white);
+}
+.trending article {
+  padding-inline: 65px;
+  position: relative;
+  width: 18%;
+}
+.trending article::after {
+  content: "";
+  height: 60px;
+  border-right: 1px solid var(--cl-white);
+  position: absolute;
+  right: 0;
+  transform: translate3d(0, -50%, 0);
+  top: 50%;
+}
+.trending article:first-of-type {
+  padding-left: 0;
+}
+.trending article:last-of-type {
+  padding-right: 0;
+}
+.trending article:last-of-type::after {
+  display: none;
+}
+.trending article a {
+  transition: all 0.3s ease-in-out;
+}
+.trending article a:hover {
+  background-color: var(--cl-accent);
+  transform: scale(1.1);
+}
+.trending img {
+  aspect-ratio: 228/200;
+  width: 100%;
+  object-fit: cover;
+}
+.trending .subheadline {
+  margin: 15px 0 20px;
+}
+.trending h3 {
+  margin-bottom: 10px;
+  padding-inline: 10px;
+}
+.trending article > a p:last-of-type {
+  padding: 0 10px 10px;
+}
+
+/************ Main-Trending Ende ************/
+
+/************ Main-Thema Anfang ************/
+
+.theme {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 50px;
+  row-gap: 50px;
+  margin-top: -150px;
+  margin-bottom: var(--section-margin);
+}
+.theme svg {
+  width: 50px;
+  height: 28px;
+  margin-top: 5px;
+}
+.theme svg > path {
+  fill: var(--cl-white);
+}
+.theme div {
+  grid-column: 3/5;
+  grid-row: 1/2;
+  display: flex;
+  margin-bottom: 20px;
+}
+.theme div h2 {
+  color: var(--cl-white);
+}
+.theme > h2 {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  font-size: 5rem;
+  align-self: center;
+}
+.theme article {
+  width: 100%;
+  position: relative;
+}
+.theme img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+.theme article:first-of-type {
+  grid-column: 3/9;
+  margin-top: -20px;
+}
+.theme article:first-of-type > img {
+  aspect-ratio: 2/1;
+}
+.theme article:nth-of-type(2) {
+  grid-column: 1/5;
+}
+.theme article:nth-of-type(3) {
+  grid-column: 5/9;
+}
+.theme article:nth-of-type(4) {
+  grid-column: 1/3;
+}
+
+.theme article:nth-of-type(5) {
+  grid-column: 4/6;
+}
+.theme article:nth-of-type(6) {
+  grid-column: 7/9;
+}
+.theme article > div {
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 50%;
+  position: absolute;
+  bottom: 10%;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.theme article:nth-of-type(4) > div,
+.theme article:nth-of-type(5) > div,
+.theme article:nth-of-type(6) > div {
+  bottom: -15px;
+  width: 297.5px;
+  padding: 30px 15px 10px 30px;
+}
+.theme article:nth-of-type(4) h3,
+.theme article:nth-of-type(5) h3,
+.theme article:nth-of-type(6) h3 {
+  font-size: 1.2rem;
+  max-width: 90%;
+  margin-bottom: 10px;
+}
+.theme .subheadline {
+  color: var(--cl-dark);
+  position: absolute;
+  top: -15px;
+}
+.theme article > div h3 {
+  color: var(--cl-white);
+  font-size: 2rem;
+  max-width: 70%;
+  display: block;
+  margin-bottom: 20px;
+}
+.theme article > div p {
+  color: var(--cl-white);
+}
+.btn {
+  grid-column: 7/9;
+  font-size: 2rem;
+  color: var(--cl-dark);
+  position: relative;
+  width: fit-content;
+  justify-self: center;
+  transition: transform 0.3s ease-in-out;
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+.btn:hover::before {
+  width: 0%;
+}
+.btn::before {
+  content: "";
+  width: 100%;
+  height: 15px;
+  background-color: var(--cl-accent);
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  z-index: -1;
+  transition: width 0.3s ease-in;
+}
+
+/************ Main-Thema Ende ************/
+
+/************ Main-Kategorien Anfang ************/
+
+.categories {
+  background-color: var(--cl-dark);
+  padding-bottom: 50px;
+}
+.categories h2 {
+  text-align: center;
+  padding: 50px 0 50px;
+  position: relative;
+  color: var(--cl-white);
+}
+
+.categories h2::before {
+  content: "";
+  height: 60px;
+  border-right: 1px solid var(--cl-white);
+  position: absolute;
+  transform: translate3d(-50%, 0, 0);
+  left: 50%;
+  top: -30px;
+  mix-blend-mode: difference;
+}
+.categories img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.categories div {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.categories article {
+  width: 16%;
+  padding-inline: 40px;
+  position: relative;
+  max-height: 180px;
+}
+.categories article::after {
+  content: "";
+  height: 60px;
+  border-right: 1px solid var(--cl-white);
+  position: absolute;
+  right: 0;
+  transform: translate3d(0, -50%, 0);
+  top: 50%;
+}
+.categories article:first-of-type {
+  padding-left: 0;
+}
+.categories article:last-of-type {
+  padding-right: 0;
+}
+.categories article:last-of-type::after {
+  display: none;
+}
+.categories article a {
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-in;
+  height: 100%;
+}
+.categories article a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px var(--cl-accent);
+}
+.categories article p {
+  position: absolute;
+  bottom: 10%;
+}
+
+/************ Main-Kategorien Ende ************/
+
+/************ Main-Socials Anfang ************/
+
+.socials {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 100px 0 50px;
+}
+.socials h2 {
+  text-align: center;
+  margin-inline: auto;
+  margin-bottom: 40px;
+  position: relative;
+  width: fit-content;
+}
+.socials h2::before {
+  content: "";
+  height: 40px;
+  border-right: 1px solid var(--cl-white);
+  position: absolute;
+  transform: translate3d(-50%, 0, 0);
+  left: 50%;
+  top: -50px;
+  mix-blend-mode: difference;
+}
+.socials h2::after {
+  content: "";
+  width: 100%;
+  height: 15px;
+  background-color: var(--cl-accent);
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  z-index: -1;
+}
+.socials div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 30vw;
+  margin-inline: auto;
+}
+.socials a {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-in;
+  border-radius: 50%;
+}
+.socials a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px 3px var(--cl-accent);
+}
+s .socials img {
+  object-fit: cover;
+  width: 100%;
+}
+
+/************ Main-Socials Ende ************/
+
+/************ Footer Anfang ************/
+
+footer {
+  display: flex;
+  align-items: center;
+  padding-block: 30px;
+}
+footer img {
+  width: 40px;
+}
+footer p {
+  margin-left: 20px;
+}
+footer nav {
+  margin-left: auto;
+}
+footer ul {
+  display: flex;
+}
+footer li {
+  margin-left: 100px;
+}
+footer a {
+  color: var(--cl-dark);
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/************ Footer Ende ************/
