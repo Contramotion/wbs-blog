@@ -132,7 +132,7 @@ header > nav,
   display: flex;
   align-items: center;
 }
-.logocontainer > img {
+.logocontainer img {
   max-width: 80px;
 }
 h1 {
@@ -184,7 +184,7 @@ header li > a:hover::before {
   width: 100%;
 }
 
-header a > img {
+header a img {
   width: 50px;
 }
 
@@ -207,10 +207,6 @@ header a > img {
 }
 .weekly h2 {
   color: var(--cl-dark);
-}
-
-.weekly > img {
-  width: 100%;
 }
 
 .weekly > section:first-of-type {
@@ -394,7 +390,7 @@ header a > img {
   grid-column: 3/9;
   margin-top: -20px;
 }
-.theme article:first-of-type > img {
+.theme article:first-of-type img {
   aspect-ratio: 2/1;
 }
 .theme article:nth-of-type(2) {
